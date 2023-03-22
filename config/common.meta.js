@@ -2,7 +2,7 @@ const pj = require('../package.json')
 module.exports = {
   name: pj.name,
   namespace: pj.homepage,
-  version: '0.0.1',
+  version: '0.0.2',
   description: pj.description,
   author: pj.author,
   copyright: pj.author,
