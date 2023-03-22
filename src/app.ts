@@ -50,13 +50,6 @@ const app = () => {
           manageButton.setAttribute('style', buttonStyle)
           manageButton.innerText = '管理'
           eles[0].lastChild && eles[0].insertBefore(manageButton, eles[0].lastChild.nextSibling)
-
-          const copyButton = document.createElement('a')
-          copyButton.setAttribute('data-clipboard-target', '.original-content')
-          copyButton.setAttribute('style', buttonStyle)
-          copyButton.setAttribute('class', 'doccopy')
-          copyButton.innerText = '拷贝文档'
-          eles[0].lastChild && eles[0].insertBefore(copyButton, eles[0].lastChild.nextSibling)
         }
         break
       }
@@ -95,8 +88,18 @@ const app = () => {
     }
   }
 
-  const gogogo = async () => {
+  function copyWhole() {
+    const eles = document.getElementsByTagName('h2')
+    const copyButton = document.createElement('a')
+    copyButton.setAttribute('data-clipboard-target', '.original-content')
+    copyButton.setAttribute('style', buttonStyle)
+    copyButton.setAttribute('class', 'doccopy')
+    copyButton.innerText = '拷贝文档'
+    eles[0].lastChild && eles[0].insertBefore(copyButton, eles[0].lastChild.nextSibling)
     new ClipboardJS('.doccopy')
+  }
+  const gogogo = async () => {
+    copyWhole()
     draft404Countermeasure()
     const getArticlePareResult = await getKijiDz()
     getArticlePareResult && addButton(getArticlePareResult)

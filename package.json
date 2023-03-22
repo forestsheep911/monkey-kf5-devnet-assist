@@ -1,6 +1,6 @@
 {
   "name": "monkey-kf5-devnet-assist",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "中日对照|管理链接|拷贝文档富文本",
   "main": "/dist/store/monkey-kf5-devnet-assist.js",
   "scripts": {
