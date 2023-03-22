@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                monkey-kf5-devnet-assist
 // @namespace           https://github.com/forestsheep911/monkey-kf5-devnet-assist
-// @version             0.0.3
+// @version             0.0.4
 // @description         中日对照|管理链接|拷贝文档富文本
 // @author              bxu
 // @copyright           bxu
@@ -1012,12 +1012,6 @@ var app = function () {
                     manageButton.setAttribute('style', buttonStyle);
                     manageButton.innerText = '管理';
                     eles[0].lastChild && eles[0].insertBefore(manageButton, eles[0].lastChild.nextSibling);
-                    var copyButton = document.createElement('a');
-                    copyButton.setAttribute('data-clipboard-target', '.original-content');
-                    copyButton.setAttribute('style', buttonStyle);
-                    copyButton.setAttribute('class', 'doccopy');
-                    copyButton.innerText = '拷贝文档';
-                    eles[0].lastChild && eles[0].insertBefore(copyButton, eles[0].lastChild.nextSibling);
                 }
                 break;
             }
@@ -1054,12 +1048,22 @@ var app = function () {
             testDrarftAndJump();
         }
     }
+    function copyWhole() {
+        var eles = document.getElementsByTagName('h2');
+        var copyButton = document.createElement('a');
+        copyButton.setAttribute('data-clipboard-target', '.original-content');
+        copyButton.setAttribute('style', buttonStyle);
+        copyButton.setAttribute('class', 'doccopy');
+        copyButton.innerText = '拷贝文档';
+        eles[0].lastChild && eles[0].insertBefore(copyButton, eles[0].lastChild.nextSibling);
+        new clipboard_1.default('.doccopy');
+    }
     var gogogo = function () { return __awaiter(void 0, void 0, void 0, function () {
         var getArticlePareResult;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    new clipboard_1.default('.doccopy');
+                    copyWhole();
                     draft404Countermeasure();
                     return [4 /*yield*/, getKijiDz()];
                 case 1:
