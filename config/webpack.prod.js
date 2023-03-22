@@ -17,7 +17,7 @@ module.exports = () => {
     }),
   )
   baseOptions.mode = 'production'
-  // baseOptions.externals = {}
+  baseOptions.externals = { axios: 'axios', ClipboardJS: 'clipboard' }
 
   return baseOptions
 }
