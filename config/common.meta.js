@@ -1,6 +1,6 @@
 const pj = require('../package.json')
 module.exports = {
-  name: `pj.name`,
+  name: pj.name,
   namespace: pj.homepage,
   version: '0.0.1',
   description: pj.description,
