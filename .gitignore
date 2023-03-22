@@ -25,6 +25,7 @@
 node_modules/
 dist/*.*
 dist/dev/*.* 
+dist/store/*.* 
 npm-debug.log
 yarn-error.log
 
