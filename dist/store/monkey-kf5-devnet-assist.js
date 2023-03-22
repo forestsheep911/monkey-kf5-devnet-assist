@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name                pj.name
+// @name                monkey-kf5-devnet-assist
 // @namespace           https://github.com/forestsheep911/monkey-kf5-devnet-assist
-// @version             0.0.1
+// @version             0.0.3
 // @description         中日对照|管理链接|拷贝文档富文本
 // @author              bxu
 // @copyright           bxu
